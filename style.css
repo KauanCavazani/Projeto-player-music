@@ -1,0 +1,94 @@
+:root{
+    --background:#1b0536;
+    --linearGradient: #680251;
+    --highlights:#F81AC5;
+    --shape:#fafafa;
+    --shape-secoundary:#eaeaea;
+    --secondary:#321B4F;
+    --shapeSecoundary: #754369
+}   
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    color: #FFF;
+}
+
+
+html{
+    @media(max-width:1080px){
+        font-size:93.75%; 
+    }
+
+    @media(max-width:720px){
+        font-size:87.5%;
+    }
+}
+
+body, input, textarea, button{
+    font-family:'Poppins',sans-serif;
+    font-weight:400;
+}
+
+body{
+    background-image: linear-gradient(var(--linearGradient),var(--background));
+    -webkit-font-smoothing: antialiased;
+    height: 100vh;
+}
+
+header {
+    padding: 20px;
+}
+
+h1,h2,h3,h4,h5,h6,strong{
+    font-weight:600;
+}
+
+button{
+    cursor:pointer;
+    background: none;
+    border: none;
+}
+
+[disabled]{
+    opacity:0.6;
+    cursor:not-allowed;
+}
+
+/* --------------------------------------------------------------------------- */
+
+.container {
+    width: 30vw;
+    height: 100vh;
+    margin-left: 37%;
+    padding-top: 44px;
+    text-align: center;
+}
+
+#image-music {
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.player {
+    width: 70%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    margin-top: 88px;
+}
+
+.menu {
+    width: 70%;
+    height: 65px;
+    border-radius: 22px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-around;
+    background-color: #321B4F;
+    margin-top: 26px;
+}
