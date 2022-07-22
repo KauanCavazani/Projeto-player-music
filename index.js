@@ -21,6 +21,62 @@ const myMusics = [
         artist: "Taylor Swift",
         song: './assets/audios/TaylorSwift-YouBelongWithMe.mp3',
         bg: './assets/images/background/TaylorSwift-YouBelongwithMe.png'
+    },
+    {
+        id: 3,
+        name: "Treasure",
+        artist: "Bruno Mars",
+        song: './assets/audios/BrunoMars-Treasure.mp3',
+        bg: './assets/images/background/BrunoMars-Treasure.jpg'
+    },
+    {
+        id: 4,
+        name: "I Want It In That Way",
+        artist: "Backstreet Boys",
+        song: './assets/audios/BSB-IWantItInThatWay.mp3',
+        bg: './assets/images/background/BSB-IWantItThatWay.jpg'
+    },
+    {
+        id: 5,
+        name: "Dangerous",
+        artist: "Kardinal Offishall",
+        song: './assets/audios/Kardinal-Dangerous.mp3',
+        bg: './assets/images/background/Kardinal-Dangerous.jpg'
+    },
+    {
+        id: 6,
+        name: "Maps",
+        artist: "Maroon 5",
+        song: './assets/audios/Maroon5-Maps.mp3',
+        bg: './assets/images/background/Maroon5-Maps.jpg'
+    },
+    {
+        id: 7,
+        name: "Moves Like Jagger",
+        artist: "Maroon 5",
+        song: './assets/audios/Maroon5-MovesLikeJagger.mp3',
+        bg: './assets/images/background/Maronn5-MovesLikeJagger.jpg'
+    },
+    {
+        id: 8,
+        name: "Sunflower",
+        artist: "Post Malone",
+        song: './assets/audios/PostMalone-Sunflower.mp3',
+        bg: './assets/images/background/PostMalone-Sunflower.jpg'
+    },
+    {
+        id: 9,
+        name: "Mercy",
+        artist: "Shawn Mendes",
+        song: './assets/audios/ShawnMendes-Mercy.mp3',
+        bg: './assets/images/background/ShawnMendes-Mercy.jfif'
+    },
+    {
+        id: 10,
+        name: "In Your Eyes",
+        artist: "The Weeknd",
+        song: './assets/audios/TheWeeknd-InYourEyes.mp3',
+        bg: './assets/images/background/TheWeeknd-InYourEyes.jpg'
     }
 ]
 
@@ -77,6 +133,7 @@ function pauseMusic(icon) {
     music.pause();
 }
 
+// atualizar dados da progressbar
 music.addEventListener("timeupdate", (e) => {
     var currentTime = e.target.currentTime;
     var duration = e.target.duration;
@@ -128,7 +185,6 @@ function nextMusic() {
     }
 };
 
-//Voltar de música
 function prevMusic() {
     if(currentMusic > 0) {
         currentMusic--;
@@ -137,11 +193,13 @@ function prevMusic() {
     }
 }
 
+// voltar música do início
 playPrevMusic.addEventListener("click", () => {
     setCurrentMusic(currentMusic);
     playMusic();
 });
 
+// voltar Música anterior
 playPrevMusic.addEventListener("dblclick", () => {
     prevMusic();
 })
