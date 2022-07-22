@@ -151,7 +151,17 @@ function toggleShuffling() {
 
 //Mutar uma música
 function muteMusic() {
+    var muteMusicIcon = document.getElementById("mute-music-icon");
 
+    if(isMuted) {
+        isMuted = false;
+        muteMusicIcon.src = './assets/images/icons/mute-music.svg';
+        music.muted = false;
+    } else {
+        isMuted = true;
+        muteMusicIcon.src = './assets/images/icons/mute-music-active.svg';
+        music.muted = true;
+    }
 }
 
 //Começar o app
