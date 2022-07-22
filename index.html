@@ -23,6 +23,7 @@
         <div class="progress-area">
             <div class="progress-bar"></div>
         </div>
+        <audio id="music-playing" src=""></audio>
         <div class="timer">
             <span class="current">0:20</span>
             <span class="current">3:40</span>
@@ -37,7 +38,7 @@
                 <img src="./assets/images/icons/prev-music.svg" alt="">
             </button>
 
-            <div class="controlPlayPauseMusic">
+            <div class="controlPlayPauseMusic" onclick="toggleIsPlaying()">
 
                 <button class="btn-player" id="play-music">
                     <img id="play-music-icon" src="./assets/images/icons/play-music.svg"/>

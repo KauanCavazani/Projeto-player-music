@@ -26,25 +26,39 @@ function setCurrentMusic(id) {
     var image = document.getElementById("image-music");
     var nameMusic = document.getElementById("name-music");
     var nameArtist = document.getElementById("name-artist");
+    var musicPlaying = document.getElementById("music-playing");
     
     image.style.backgroundImage = `url(${myMusics[id].bg})`;
     nameMusic.innerText = `${myMusics[id].name}`;
     nameArtist.innerText = `${myMusics[id].artist}`;
+    musicPlaying.src = `${myMusics[id].song}`;
 }
 
 //Toggle de play e pause
 function toggleIsPlaying() {
+    var playMusicIcon = document.getElementById("play-music-icon");
 
+    if(isPlaying) {
+        playMusicIcon.src = './assets/images/icons/play-music.svg';
+        isPlaying = false;
+        pauseMusic(currentMusic);
+    } else {
+        playMusicIcon.src = './assets/images/icons/pause-music.svg';
+        isPlaying = true;
+        playMusic(currentMusic);
+    }
 }
 
 //Começar uma música
-function playMusic() {
-
+function playMusic(id) {
+    var music = document.getElementById("music-playing");
+    music.play();
 }
 
 //Pausar uma música
-function pauseMusic() {
-
+function pauseMusic(id) {
+    var music = document.getElementById("music-playing");
+    music.pause();
 }
 
 //Próxima Música
