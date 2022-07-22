@@ -61,7 +61,7 @@ button{
 .container {
     width: 30vw;
     height: 100vh;
-    margin-left: 37%;
+    margin-left: 35%;
     padding-top: 44px;
     text-align: center;
 }
@@ -74,12 +74,62 @@ button{
     background-color: white;
 }
 
+.progress-area {
+    margin: 0 auto;
+    height: 6px;
+    width: 70%;
+    background: var(--shapeSecoundary);
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.progress-area .progress-bar {
+    height: inherit;
+    width: 50%;
+    position: relative;
+    border-radius: inherit;
+    background: var(--highlights);
+}
+
+.progress-bar::before {
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background: #000;
+    border-radius: inherit;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    background: inherit;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.progress-area:hover .progress-bar::before {
+    opacity: 1;
+}
+
+.timer {
+    padding-top: 5px;
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.timer span {
+    font-size: 13px;
+}
+
 .player {
     width: 70%;
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
-    margin-top: 88px;
+    margin-top: 31px;
 }
 
 .menu {
