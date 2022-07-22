@@ -78,7 +78,7 @@ const myMusics = [
         song: './assets/audios/TheWeeknd-InYourEyes.mp3',
         bg: './assets/images/background/TheWeeknd-InYourEyes.jpg'
     }
-]
+];
 
 //Setar a música atual selecionada
 function setCurrentMusic(id) {
@@ -96,7 +96,7 @@ function setCurrentMusic(id) {
     progressBar.style.width = '0%';
     playMusicIcon.src = './assets/images/icons/play-music.svg';
     isPlaying = false;
-}
+};
 
 //Toggle de play e pause
 function toggleIsPlaying() {
@@ -111,7 +111,7 @@ function toggleIsPlaying() {
         isPlaying = true;
         playMusic(playMusicIcon);
     }
-}
+};
 
 var music = document.getElementById("music-playing");
 
@@ -122,7 +122,7 @@ function playMusic(icon) {
     isPlaying = true;
     music = document.getElementById("music-playing");
     music.play();
-}
+};
 
 //Pausar uma música
 function pauseMusic(icon) {
@@ -131,7 +131,7 @@ function pauseMusic(icon) {
     isPlaying = false;
     music = document.getElementById("music-playing");
     music.pause();
-}
+};
 
 // atualizar dados da progressbar
 music.addEventListener("timeupdate", (e) => {
@@ -171,7 +171,7 @@ progressArea.addEventListener("click", (e) => {
     let songDuration = music.duration;
 
     music.currentTime = ((clickedOffSetX / progressWidthVal) * songDuration);
-})
+});
 
 //Próxima Música
 function nextMusic() {
@@ -191,7 +191,7 @@ function prevMusic() {
         setCurrentMusic(currentMusic); 
         playMusic();   
     }
-}
+};
 
 // voltar música do início
 playPrevMusic.addEventListener("click", () => {
@@ -202,17 +202,24 @@ playPrevMusic.addEventListener("click", () => {
 // voltar Música anterior
 playPrevMusic.addEventListener("dblclick", () => {
     prevMusic();
-})
-
-//Embaralhar
-function shuffling() {
-
-}
+});
 
 //Toggle Ativar e Desativar o embaralhamento
 function toggleShuffling() {
+    var shufflingMusicIcon = document.getElementById("shuffling-music-icon");
 
-}
+    if(isShuffling) {
+        isShuffling = false;
+        shufflingMusicIcon.src = './assets/images/icons/shuffler-music.svg';
+        myMusics.sort((a, b) => a.id - b.id);
+        console.log(myMusics);
+    } else {
+        isShuffling = true;
+        shufflingMusicIcon.src = './assets/images/icons/shuffler-music-active.svg';
+        myMusics.sort(() => Math.random() - 0.5);
+        console.log(myMusics)
+    }
+};
 
 //Mutar uma música
 function muteMusic() {
@@ -227,11 +234,11 @@ function muteMusic() {
         muteMusicIcon.src = './assets/images/icons/mute-music-active.svg';
         music.muted = true;
     }
-}
+};
 
 //Começar o app
 function app() {
     setCurrentMusic(currentMusic);
-}
+};
 
 app()
