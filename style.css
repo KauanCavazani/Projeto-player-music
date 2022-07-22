@@ -62,7 +62,7 @@ button{
     width: 30vw;
     height: 100vh;
     margin-left: 35%;
-    padding-top: 44px;
+    padding-top: 34px;
     text-align: center;
 }
 
@@ -129,7 +129,19 @@ button{
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
-    margin-top: 31px;
+    margin-top: 23px;
+}
+
+.player .controlPlayPauseMusic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--highlights);
+    display: flex;
+}
+
+.controlPlayPauseMusic .btn-player {
+    margin: 0 auto;
 }
 
 .menu {
