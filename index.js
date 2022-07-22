@@ -1,22 +1,35 @@
 let isPlaying = false;
-let currentMusic = 1;
+let currentMusic = 0;
 let isShuffling = false;
 let isMuted = false;
 
 
-const myMusics = [ //SOMENTE EXEMPLO
+const myMusics = [ 
     {
         id: 1,
-        name: "Baile da Serra",
-        artist: "Dj Nattan, Barrao, LIT UP",
-        song: 'baileDaSerra.mp3',
-        bg: 'baileDaSerra.png'
+        name: "Red",
+        artist: "Taylor Swift",
+        song: './assets/audios/TaylorSwift-Red.mp3',
+        bg: './assets/images/background/TaylorSwift-Red.jpg'
+    },
+    {
+        id: 2,
+        name: "You Belong With Me",
+        artist: "Taylor Swift",
+        song: './assets/audios/TaylorSwift-YouBelongWithMe.mp3',
+        bg: './assets/images/background/TaylorSwift-YouBelongwithMe.png'
     }
 ]
 
 //Setar a música atual selecionada
 function setCurrentMusic(id) {
-
+    var image = document.getElementById("image-music");
+    var nameMusic = document.getElementById("name-music");
+    var nameArtist = document.getElementById("name-artist");
+    
+    image.style.backgroundImage = `url(${myMusics[id].bg})`;
+    nameMusic.innerText = `${myMusics[id].name}`;
+    nameArtist.innerText = `${myMusics[id].artist}`;
 }
 
 //Toggle de play e pause
@@ -61,7 +74,7 @@ function muteMusic() {
 
 //Começar o app
 function app() {
-
+    setCurrentMusic(currentMusic);
 }
 
 app()
