@@ -30,6 +30,7 @@ function setCurrentMusic(id) {
     var nameMusic = document.getElementById("name-music");
     var nameArtist = document.getElementById("name-artist");
     var musicPlaying = document.getElementById("music-playing");
+    var playMusicIcon = document.getElementById("play-music-icon");
     
     image.style.backgroundImage = `url(${myMusics[id].bg})`;
     nameMusic.innerText = `${myMusics[id].name}`;
@@ -37,8 +38,8 @@ function setCurrentMusic(id) {
     musicPlaying.src = `${myMusics[id].song}`;
 
     progressBar.style.width = '0%';
-
-    
+    playMusicIcon.src = './assets/images/icons/play-music.svg';
+    isPlaying = false;
 }
 
 //Toggle de play e pause
@@ -102,6 +103,9 @@ music.addEventListener("timeupdate", (e) => {
     };
     musicCurrentTime.innerText = `${currentMin}:${currentSec}`;
 
+    if(currentTime == duration) {
+        nextMusic();
+    }
 });
 
 progressArea.addEventListener("click", (e) => {
@@ -118,8 +122,11 @@ function nextMusic() {
         currentMusic++;
         setCurrentMusic(currentMusic);
         playMusic();  
-    };
-}
+    } else {
+        currentMusic = 0;
+        setCurrentMusic(currentMusic);
+    }
+};
 
 //Voltar de música
 function prevMusic() {
