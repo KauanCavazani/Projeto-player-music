@@ -204,6 +204,22 @@ playPrevMusic.addEventListener("dblclick", () => {
     prevMusic();
 });
 
+// dblclick para mobile
+let lastClick = 0;
+playPrevMusic.addEventListener('touchstart', function(e) {
+    e.preventDefault(); 
+    let date = new Date();
+    let time = date.getTime();
+    const timebetweenTaps = 200; // 200ms
+    if (time - lastClick < timebetweenTaps) {
+        prevMusic();
+    } else {
+        setCurrentMusic(currentMusic);
+        playMusic();
+    }
+    lastClick = time;
+})
+
 //Toggle Ativar e Desativar o embaralhamento
 function toggleShuffling() {
     var shufflingMusicIcon = document.getElementById("shuffling-music-icon");

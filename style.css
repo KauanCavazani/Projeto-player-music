@@ -60,9 +60,9 @@ button{
 /* --------------------------------------------------------------------------- */
 
 .container {
-    width: 30vw;
+    width: 376px;
     height: 100vh;
-    margin-left: 35%;
+    margin: 0 auto;
     padding-top: 21px;
     text-align: center;
 }
