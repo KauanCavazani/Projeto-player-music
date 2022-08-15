@@ -12,6 +12,13 @@ Esse projeto é um player que contém 10 músicas para você ouvir!
 
 ![App Screenshot](assets/readme/screenshot.png)
 
+## Funcionalidades
+
+- Play/pause
+- Avançar/voltar música
+- Mutar música
+- Modo aleatório
+
 ## Autores
 
 - [@KauanCavazani](https://www.github.com/KauanCavazani)
