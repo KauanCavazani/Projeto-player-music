@@ -10,7 +10,7 @@ Esse projeto é um player que contém 10 músicas para você ouvir!
 
 ## Screenshots
 
-![App Screenshot](assets/readme/screenshot.png)
+![App Screenshot](assets/readme/image.png)
 
 ## Funcionalidades
 

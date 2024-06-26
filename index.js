@@ -9,20 +9,6 @@ var playPrevMusic = document.getElementById("play-prevMusic");
 
 const myMusics = [ 
     {
-        id: 1,
-        name: "Red",
-        artist: "Taylor Swift",
-        song: './assets/audios/TaylorSwift-Red.mp3',
-        bg: './assets/images/background/TaylorSwift-Red.jpg'
-    },
-    {
-        id: 2,
-        name: "You Belong With Me",
-        artist: "Taylor Swift",
-        song: './assets/audios/TaylorSwift-YouBelongWithMe.mp3',
-        bg: './assets/images/background/TaylorSwift-YouBelongwithMe.png'
-    },
-    {
         id: 3,
         name: "Treasure",
         artist: "Bruno Mars",
